@@ -17,7 +17,6 @@ chrome.extension.sendMessage({}, function(response) {
 chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
 	  
-	console.log("message se nt");
     if( request.message === "clicked_browser_action" ) {
       var firstHref = $("a[href^='http']").eq(0).attr("href");
 
