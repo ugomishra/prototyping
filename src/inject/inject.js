@@ -22,6 +22,8 @@ chrome.extension.sendMessage({}, function(response) {
 chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
 
+  		settings.set('extStatus', !settings.get('extStatus'));
+
   	//if  extension on
   	if(settings.get('extStatus')) {
 
@@ -36,9 +38,11 @@ chrome.runtime.onMessage.addListener(
 	    	storeItem()
 	    }
 
+	    console.log('ext on');
+
   	}
   	else {
-  		console.log('switch on the extension')
+  		console.log('ext off')
   	}
 
   }
